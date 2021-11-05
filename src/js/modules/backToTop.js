@@ -19,7 +19,7 @@ const init = () => {
 			if (lastScrollTop > scrollTop) {
 				$(className).addClass(shownClass);
 			} else {
-				$(className).removeClass(shownClass);
+				// $(className).removeClass(shownClass);
 			}
 		} else {
 			$(className).removeClass(shownClass);

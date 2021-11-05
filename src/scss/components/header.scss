@@ -2,9 +2,12 @@
 	position: fixed;
 	left: 0;
 	right: 0;
-	top: 0;
+	top: 30px;
 	z-index: 2100;
-	padding: 30px 0;
+
+	@include desktop {
+		top: 100px;
+	}
 
 	&__menu {
 		position: fixed;
@@ -32,6 +35,10 @@
 		transition: $duration-normal;
 		-webkit-overflow-scrolling: touch;
 
+		@include desktop {
+			display: none;
+		}
+
 		&-icon {
 			display: block;
 			margin: auto auto 0 auto;
@@ -39,6 +46,10 @@
 			max-width: 1000px;
 			opacity: 0;
 			transition: 1s $easing-back-out $duration-normal;
+
+			@include desktop {
+				display: none;
+			}
 		}
 
 		@include active {
@@ -46,12 +57,11 @@
 			visibility: visible;
 			transform: translateY(0);
 
-				& img {
-					opacity: 1;
-				}
+			& img {
+				opacity: 1;
+			}
 		}
 	}
-	
 
 	&__list {
 		width: 100%;
@@ -84,7 +94,11 @@
 		margin-right: -10px;
 		color: $color-black;
 		transition: $duration-normal $easing-back-out;
-		
+
+		@include desktop {
+			display: none;
+		}
+
 		span {
 			display: block;
 			margin: (4px/2) 0;
@@ -100,6 +114,7 @@
 
 			span {
 				transition: $duration-normal $easing-back-out;
+
 				&:first-child {
 					transform: translate(0, 6px) rotate(-45deg);
 				}
@@ -114,6 +129,46 @@
 			}
 		}
 
-	
+
+	}
+
+	&__nav--desktop {
+		display: none;
+
+		@include desktop {
+			display: flex;
+			justify-content: flex-end;
+
+		}
+	}
+
+	&__nav-list {
+
+
+
+		@include desktop {
+
+			display: flex;
+			justify-content: space-between;
+			width: 25%;
+			// margin: 0 -15px;
+		}
+
+		@include laptop {
+			width: 40%;
+		}
+
+	}
+
+	&__nav-link {
+		@include desktop {
+			font-style: normal;
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 21px;
+			color: $color-black;
+
+		}
+
 	}
 }
