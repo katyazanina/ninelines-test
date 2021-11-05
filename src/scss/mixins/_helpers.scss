@@ -7,6 +7,7 @@
 }
 
 @mixin supports-safe-area-insets {
+
 	// stylelint-disable-next-line
 	@supports (padding: max(0px)) {
 		@content;
@@ -32,6 +33,7 @@
 }
 
 @mixin disabled {
+
 	&.is-disabled,
 	&:disabled {
 		@content;
@@ -64,8 +66,10 @@
 }
 
 @mixin retina {
+
 	// stylelint-disable-next-line media-feature-name-no-vendor-prefix
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	@media (-webkit-min-device-pixel-ratio: 2),
+	(min-resolution: 192dpi) {
 		@content;
 	}
 }
@@ -87,4 +91,76 @@
 		@content;
 	}
 }
+
 /* stylelint-enable */
+
+
+@mixin h1-style {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 28px;
+	line-height: 39px;
+
+	@include desktop {
+		font-size: 36px;
+		line-height: 50px;
+	}
+}
+
+@mixin h2-style {
+	margin: 0;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom: 20px;
+
+	@include desktop {
+		font-size: 24px;
+		line-height: 29px;
+		margin-bottom: 30px;
+	}
+}
+
+@mixin p-style {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+@mixin section-divider {
+	position: relative;
+	margin-bottom: 40px;
+
+	@include desktop {
+		margin-bottom: 0;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -80px;
+		left: 50%;
+		transform: translateX(-50%);
+		right: 0;
+		width: 100vw;
+		max-width: 1800px;
+		height: (100vw / 3);
+		background-image: url("../images/hero-line.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		pointer-events: none;
+		z-index: -1;
+
+		@include desktop {
+			background-image: url("../images/hero-line-desktop.svg");
+			bottom: 0;
+			height: (100vw / 4);
+			max-height: 480px;
+
+		}
+
+	}
+}

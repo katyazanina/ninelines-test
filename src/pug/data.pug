@@ -2,37 +2,150 @@
 	const data = {
 		header: {
 			links: {
-				logo: 'https://ninelines.agency/',
+				logo: '/',
 			},
 			menu: [
 				{
-					url: '#hello',
-					name: 'Ну привет'
+					url: '#resume',
+					name: 'Резюме'
 				},
 				{
-					url: '#necessarily',
-					name: 'Обязательно к прочтению'
+					url: '#about',
+					name: 'О себе'
 				},
 				{
-					url: '#bye',
-					name: 'И пока'
+					url: '#skills',
+					name: 'Навыки'
 				}
 			]
 		},
 
 		share: {
 			caption: 'Поделиться:',
-			list: ['fb', 'tw', 'vk', 'ok'],
+			list: [
+				{
+					name :'fb',
+					url: '/',
+				},
+				{
+					name :'vk',
+					url: '/',
+				},	
+				{
+					name :'tg',
+					url: '/',
+				}	
+			],
+			
 		},
 
-		home: {
-			title: 'гид&nbsp;по <br><span class="for-desktop">бережному</span><span class="for-devices">общению</span>',
-			read: 'Читать',
+		job:{
+			title : 'Опыт работы',
+			list: [
+				{
+					period: 'Июль 2020',
+					name: 'Frontend-разработчик',
+					company: 'Артфактор',
+					icon: 'icon/small-br.svg',
+					logo: `sprites/png/logo`,
+					description: 'Интернет-агенство в Санкт-Петербурге',
+					bigdescription: 'Верстка и программирование сайтов на Wordpress и Bitrix, поддержка старых сайтов',
+					linkslist: [
+						{
+							link: 'https://kzgroup.ru/',
+							namelink: 'Сайт Кировского завода'
+						},
+						
+					]
+				},
+				{
+					period: 'Июнь 2019 - Июль 2020',
+					name: 'Фриланс',
+					company: '',
+					icon: 'icon/small-br1.svg',
+					logo: '',
+					description: '',
+					bigdescription: 'Разработка сайтов под ключ, дизайн, верстка, натяжка на Wordress',
+					linkslist: [
+						{
+							link: 'https://dmcomposer.com/',
+							namelink: 'Сайт для композитора'
+						},
+						{
+							link: 'https://millennium-corporation.com',
+							namelink: 'Millennium corporation'
+						},
+						
+						
+					]
+				}
+			],
 		},
 
-		modal: {
-			close: 'Закрыть',
+		study: {
+			title : 'Образование',
+			list: [
+				{
+					icon: 'big-br.svg',
+					name: 'Interface Design: Web & Mobile',
+					desc: 'IT-Academy, 2020',
+				},
+				{
+					icon: 'big-br.svg',
+					name: 'Interface Design: Web & Mobile',
+					desc: 'IT-Academy, 2020',
+				},
+				{
+					icon: 'big-br.svg',
+					name: 'Interface Design: Web & Mobile',
+					desc: 'IT-Academy, 2020',
+				},
+				{
+					icon: 'big-br.svg',
+					name: 'Interface Design: Web & Mobile',
+					desc: 'IT-Academy, 2020',
+				},
+				{
+					icon: 'big-br.svg',
+					name: 'Interface Design: Web & Mobile',
+					desc: 'IT-Academy, 2020',
+				},
+			]
 		},
+
+		skills: {
+			title : 'Навыки',
+			list: [
+				{
+					name: 'Adobe Creative Suite',
+					desc: 'Photoshop, Illustrator, InDesign, XD, After Effects',
+				},
+				{
+					name: 'Adobe Creative Suite',
+					desc: 'Photoshop, Illustrator, InDesign, XD, After Effects',
+				},
+				{
+					name: 'Adobe Creative Suite',
+					desc: 'Photoshop, Illustrator, InDesign, XD, After Effects',
+				},
+				{
+					name: 'Adobe Creative Suite',
+					desc: 'Photoshop, Illustrator, InDesign, XD, After Effects',
+				},
+				{
+					name: 'Adobe Creative Suite',
+					desc: 'Photoshop, Illustrator, InDesign, XD, After Effects',
+				},
+				{
+					name: 'Adobe Creative Suite',
+					desc: 'Photoshop, Illustrator, InDesign, XD, After Effects',
+				},
+				{
+					name: 'Adobe Creative Suite',
+					desc: 'Photoshop, Illustrator, InDesign, XD, After Effects',
+				},
+			]
+		}
 	};
 
 script.

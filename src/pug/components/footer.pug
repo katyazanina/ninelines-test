@@ -1,6 +1,5 @@
 footer.footer
-	.footer__copyright
-		span(data-actual-year)
-
-	.footer__developer
-		| &copy;&nbsp;Девять линий
+	img.footer__img(src=`${baseDir}/images/footer-logo.png`, alt="" srcset=`${baseDir}images/footer-logo.png 1x, ${baseDir}images/footer-logo@2x.png  2x`)
+button.bth__down.js-back-to-top(type="button")
+	span.visually-hidden Наверх
+	+svg("arrowup")
