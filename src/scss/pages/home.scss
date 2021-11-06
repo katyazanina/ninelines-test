@@ -2,7 +2,6 @@
 	@include section-divider;
 
 	@include desktop {
-
 		height: (100vh - 100);
 		// stylelint-disable-next-line
 		height: calc(var(--vh) - 100px);
@@ -12,7 +11,6 @@
 	&__wrap {
 		@include desktop {
 			display: flex;
-
 			justify-content: space-between;
 		}
 	}
@@ -37,7 +35,6 @@
 		@include desktop {
 			margin-bottom: 30px;
 		}
-
 	}
 
 	&__about {
@@ -55,12 +52,18 @@
 	&__link {
 		@include p-style;
 		padding: 5px 0px;
+
+		& a {
+			@include hover {
+
+				color: $color-red;
+			}
+		}
+
 	}
 
 	&__contact {
 		position: relative;
-
-
 
 		@include desktop {
 			width: 25%;
@@ -84,8 +87,11 @@
 		width: 25px;
 		height: 25px;
 		padding: 0 10px;
-	}
 
+		@include hover {
+			color: $color-red;
+		}
+	}
 }
 
 .resume {
@@ -126,16 +132,11 @@
 		@include desktop {
 			max-height: vw(500);
 			position: absolute;
-			left: 58%;
-			transform: translateX(-58%);
+			left: 42%;
+			// transform: translateX(-58%);
 			z-index: -1;
 			pointer-events: none;
 		}
-
-		// @include laptop {
-		// 	left: 60%;
-		// 	transform: translateX(-60%);
-		// }
 	}
 }
 
@@ -184,7 +185,6 @@
 	&__name {
 		display: flex;
 		align-items: center;
-
 		font-size: 14px;
 		line-height: 17px;
 		margin-bottom: 10px;
@@ -199,7 +199,6 @@
 		font-style: normal;
 		font-weight: bold;
 		margin-right: 10px;
-
 		display: flex;
 		flex-wrap: wrap;
 
@@ -220,11 +219,15 @@
 
 	&__link {
 		@include p-style;
-		border-bottom: 1px solid $color-blue;
+		border-bottom: 1px solid currentColor;
 		color: $color-blue;
 		display: inline-block;
 		margin-right: auto;
 		margin-bottom: 5px;
+
+		@include hover {
+			color: $color-red;
+		}
 	}
 }
 
@@ -264,6 +267,7 @@
 			width: 100%;
 			margin-left: 0;
 			margin-right: 0;
+			margin-bottom: 30px;
 		}
 	}
 
@@ -277,7 +281,6 @@
 		text-align: center;
 		font-weight: bold;
 		margin: 5px 0px;
-
 	}
 }
 

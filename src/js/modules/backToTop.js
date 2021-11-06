@@ -6,27 +6,32 @@ import helpers from '../helpers';
 const init = () => {
 	const className = '.js-back-to-top';
 	const shownClass = 'is-shown';
-	let lastScrollTop = 0;
 
-	helpers.$document.on('click.backTop', `${className}`, () => {
+	helpers.$document.on('click.backTop', `${className}`, (e) => {
+		e.preventDefault();
 		helpers.scrollTo($('body'));
 	});
 
-	helpers.$window.on('scroll.backTop', () => {
-		const scrollTop = window.pageYOffset;
+	if (window.scroller.options.isMobile || window.scroller.options.isTablet) {
+		helpers.$window.on('scroll.backTop', () => {
+			const scrollTop = window.pageYOffset;
 
-		if (scrollTop > window.innerHeight) {
-			if (lastScrollTop > scrollTop) {
+			if (scrollTop > window.innerHeight) {
 				$(className).addClass(shownClass);
 			} else {
-				// $(className).removeClass(shownClass);
+				$(className).removeClass(shownClass);
 			}
-		} else {
-			$(className).removeClass(shownClass);
-		}
-
-		lastScrollTop = scrollTop;
-	});
+		});
+	} else {
+		window.scroller.on('scroll', (args) => {
+			const scrollTop = args.scroll.y;
+			if (scrollTop > window.innerHeight) {
+				$(className).addClass(shownClass);
+			} else {
+				$(className).removeClass(shownClass);
+			}
+		});
+	}
 };
 
 const destroy = () => {

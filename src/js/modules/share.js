@@ -1,28 +1,26 @@
 const purl = location.origin + location.pathname;
+const title = window.data.title;
+const text = window.data.desc;
+const img = purl + window.data.img;
 const Share = {
 	vk() {
 		let url = 'https://vk.com/share.php?url=';
-		url += `url=${encodeURIComponent(purl)}`;
-		// url += `&title=${encodeURIComponent(ptitle)}`;
-		// url += `&description=${encodeURIComponent(text)}`;
-		// url += `&image=${encodeURIComponent(pimg)}`;
+		url += `${encodeURIComponent(purl)}`;
+		url += `&title=${encodeURIComponent(title)}`;
+		// url += `&description=${encodeURIComponent(text)}`;//Вроде нет этого параметра
+		url += `&image=${encodeURIComponent(img)}`;
 		url += '&noparse=true';
 		Share.popup(url);
 	},
 	fb() {
 		let url = 'https://facebook.com/sharer/sharer.php?u=';
-		// url += `&p[title]=${encodeURIComponent(ptitle)}`;
-		// url += `&p[summary]=${encodeURIComponent(text)}`;
-		url += `&p[url]=${encodeURIComponent(purl)}`;
-		// url += `&p[images][0]=${encodeURIComponent(pimg)}`;
 		Share.popup(url);
 	},
 	tg() {
 		let url = 'https://t.me/share/url?url=';
-		// url += `&p[title]=${encodeURIComponent(ptitle)}`;
-		// url += `&p[summary]=${encodeURIComponent(text)}`;
-		url += `&p[url]=${encodeURIComponent(purl)}`;
-		// url += `&p[images][0]=${encodeURIComponent(pimg)}`;
+		url += `&text=${encodeURIComponent(title)}, ${encodeURIComponent(text)}`;
+		url += `${encodeURIComponent(purl)}`;
+		// url += `&image=${encodeURIComponent(img)}`;
 		Share.popup(url);
 	},
 	popup(url) {

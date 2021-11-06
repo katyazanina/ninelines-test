@@ -1,6 +1,4 @@
 .footer {
-	position: fixed;
-	bottom: 0;
 	background: $color-white;
 	display: flex;
 	justify-content: center;
@@ -8,13 +6,11 @@
 	width: 100%;
 	max-height: 100vh;
 	padding-top: 40px;
-	padding-bottom: 40px;
 
 	&__img {
 		width: 100%;
 		max-width: 512px;
 	}
-
 }
 
 .bth__down {
@@ -25,14 +21,14 @@
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border: 1px solid $color-red;
 	background: transparent;
 	opacity: 0;
-	transition: opacity 0.5s ease;
+	transition: opacity $duration-normal $easing-back-out,
+		background-color $duration-normal $easing-back-out;
 
 	& svg {
 		width: 10px;
@@ -42,9 +38,14 @@
 		}
 	}
 
+	@include hover {
+		background-color: $color-red;
+	}
+
 	@include desktop {
-		bottom: 25px;
-		right: 90px;
+		bottom: auto;
+		top: 89vh;
+		right: 30px;
 		width: 48px;
 		height: 48px;
 	}

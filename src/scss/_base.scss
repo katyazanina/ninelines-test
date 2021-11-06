@@ -139,7 +139,6 @@ iframe {
 .container {
 	box-sizing: border-box;
 	padding: 0 vm(20);
-
 	width: 100%;
 	min-width: 100%;
 
@@ -161,11 +160,13 @@ iframe {
 	min-height: 100vh; // fallback
 	// stylelint-disable-next-line
 	min-height: var(--vh);
-	margin-top: 30px;
+}
 
+#scroll {
+	padding-top: 30px;
 
 	@include desktop {
-		margin-top: 100px;
+		padding-top: 100px;
 	}
 }
 
