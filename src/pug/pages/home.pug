@@ -1,18 +1,31 @@
 main
 	section.hero(id="about")
 		.container
-			img.hero__logo(src=`${baseDir}images/logo.png` srcset=`${baseDir}images/logo.png 1x, ${baseDir}images/Logo@2x.png  2x`)
+			img.hero__logo(
+					
+					alt="Logo", 
+					src=`${baseDir}images/logo.png` 
+					srcset=`${baseDir}images/logo.png 1x, ${baseDir}images/Logo@2x.png  2x`
+				)
 			.hero__wrap
 				.hero__about
-					h1.hero__title Екатерина,<br>Frontend-разработчик
-					p.hero__desc Как разработчик, я высоко ценю способность воплотить видение дизайнера в жизнь, что считаю очень полезным для бизнеса. Я получаю огромное удовлетворение, наблюдая за работой от идеи до дизайна, особенно когда она появляется в руках пользователя. Я считаю, что ориентированные на пользователя решения являются наиболее ценными цифровыми ресурсами будущего.
+					h1.hero__title
+						!= data.title
+						br
+						!= data.jobname
+					p.hero__desc
+						!= data.description
+					 
 				.hero__contact
 					ul.hero__links
 						li.hero__link
-							a(href="mailto:katyazanina95@gmail.com") katyazanina95@gmail.com
+							a(href=`mailto:${data.mail}`) 
+								!= data.mail
 						li.hero__link
-							a(href="tel:+79509007140") +7(950)900 71 40
-						li.hero__link г. Тула
+							a(href=`tel:${data.phonelink}`)
+								!= data.phone
+						li.hero__link 
+							!= data.city
 					ul.hero__social
 						each object, key in data.share.list
 							li
@@ -37,11 +50,15 @@ main
 									!= object.period
 								h3.job__title 
 									!= object.name
-									img.job__icon(src=`${baseDir}images/${object.icon}`)
+									img.job__icon(src=`${baseDir}images/${object.icon}` alt=`${object.name}`)
 								if object.company
 									.job__name
 										if object.logo
-											img.job__logo(src=`${baseDir}images/${object.logo}.png` srcset=`${baseDir}images/${object.logo}.png 1x, ${baseDir}images/${object.logo}@2x.png  2x`)
+											img.job__logo(
+													alt=`${object.company}`
+													src=`${baseDir}images/${object.logo}.png` 
+													srcset=`${baseDir}images/${object.logo}.png 1x, ${baseDir}images/${object.logo}@2x.png  2x`
+												)
 										span.job__company 
 											span.job__brand
 												!= object.company
@@ -57,19 +74,26 @@ main
 											li
 												a.job__link(href=`${link.link}` target="_blank") 
 													!=link.namelink 	 
-				img.resume__human(src=`${baseDir}/images/human.png` srcset=`${baseDir}images/human.png 1x, ${baseDir}images/human@2x.png  2x`) 					
+				img.resume__human(
+						data-scroll 
+						data-scroll-speed="6" 
+						data-scroll-repeat 
+						src=`${baseDir}/images/human.png` 
+						srcset=`${baseDir}images/human.png 1x, ${baseDir}images/human@2x.png  2x`
+						alt="Human"
+					) 					
 				.study 
 					h2.resume__title 
 						!= data.study.title
 					ul.study__list
 						each object, key in data.study.list
 							li.study__item
-								img.study__icon(src=`${baseDir}images/icon/${object.icon}`)
+								img.study__icon(src=`${baseDir}images/icon/${object.icon}` alt=`${object.name}`)
 								h3.study__title 
 									!= object.name
 								p.study__desc
 									!= object.desc
-
+	
 	section.skills(id="skills")
 		.container
 			h2.skills__title 

@@ -8,14 +8,11 @@ append vars
 
 block content
 	include pug/data
-
-	.site
-		include pug/components/preloader
-		
-		include pug/components/header
-
-		include pug/pages/home
-
-		include pug/components/footer
+	include pug/components/preloader
+	.site(id="intro" data-scroll-container)
+		div(id="scroll") 
+			include pug/components/header
+			include pug/pages/home
+			include pug/components/footer
 
 	//- include pug/components/analytics

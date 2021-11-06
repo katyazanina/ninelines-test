@@ -1,5 +1,17 @@
 footer.footer
-	img.footer__img(src=`${baseDir}/images/footer-logo.png`, alt="" srcset=`${baseDir}images/footer-logo.png 1x, ${baseDir}images/footer-logo@2x.png  2x`)
-button.bth__down.js-back-to-top(type="button")
-	span.visually-hidden Наверх
-	+svg("arrowup")
+	img.footer__img(
+		data-scroll
+		data-scroll-position="bottom"
+		data-scroll-speed="-10"
+		data-scroll-repeat src=`${baseDir}/images/footer-logo.png`,
+		alt="preloader"
+		srcset=`${baseDir}images/footer-logo.png 1x, ${baseDir}images/footer-logo@2x.png  2x`)
+a.bth__down.js-back-to-top( 
+	href="#intro"
+	data-scroll
+	data-scroll-sticky
+	data-scroll-target="#scroll"
+	data-scroll-to
+	)
+		span.visually-hidden Наверх
+		+svg("arrowup")

@@ -1,14 +1,16 @@
-header.header
+header.header(data-scroll data-scroll-sticky data-scroll-target="#scroll")
 	.container
 
 		nav.header__nav--desktop
 			.header__nav-list
 				each object, key in data.header.menu
-					a.header__nav-link.js-to-anchor(
+					a.header__nav-link.js-to-anchor-desktop(
 						href=object.url
 						data-link=key
+						data-scroll-to
 					)
-						!= object.name
+						span
+							!= object.name
 
 		button.header__burger.header__burger--mobile.btn.js-burger(type="button")
 			span
@@ -24,4 +26,8 @@ header.header
 					)
 						!= object.name
 
-			img.header__menu-icon(src=`${baseDir}/images/menu.png` srcset=`${baseDir}images/menu.png 1x, ${baseDir}images/menu@2x.png  2x`)
+			img.header__menu-icon(
+					alt="preloader"
+					src=`${baseDir}/images/menu.png` 
+					srcset=`${baseDir}images/menu.png 1x, ${baseDir}images/menu@2x.png  2x`
+				)

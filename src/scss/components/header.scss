@@ -6,7 +6,7 @@
 	z-index: 2100;
 
 	@include desktop {
-		top: 100px;
+		top: 0px;
 	}
 
 	&__menu {
@@ -72,15 +72,14 @@
 		display: flex;
 		justify-content: left;
 		margin: 0 auto;
-		padding: 20px 30px;
+		padding: 20px vm(20);
 		text-align: left;
+
 		// @include sprite-background-image("active");
 		// Не работает
-
-		@include hover {
-			color: $color-black;
+		@include tablet {
+			padding: 20px vm(50);
 		}
-
 	}
 
 	&__burger {
@@ -128,8 +127,6 @@
 				}
 			}
 		}
-
-
 	}
 
 	&__nav--desktop {
@@ -138,26 +135,20 @@
 		@include desktop {
 			display: flex;
 			justify-content: flex-end;
-
 		}
 	}
 
 	&__nav-list {
-
-
-
 		@include desktop {
-
 			display: flex;
 			justify-content: space-between;
 			width: 25%;
-			// margin: 0 -15px;
+			background-color: $color-white;
 		}
 
 		@include laptop {
 			width: 40%;
 		}
-
 	}
 
 	&__nav-link {
@@ -167,8 +158,38 @@
 			font-size: 18px;
 			line-height: 21px;
 			color: $color-black;
+			padding: 100px 0 25px 0px;
+			position: relative;
 
+			& span {
+				position: relative;
+				z-index: 2;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				height: 155px;
+				width: 105px;
+				bottom: 0;
+				left: 0;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-image: url("../images/active.svg");
+				z-index: 1;
+				opacity: 0;
+				pointer-events: none;
+				transition: 1s $easing-back-out $duration-normal;
+			}
+
+			&:hover::after {
+				opacity: 1;
+			}
+
+			&.is-active::after {
+				opacity: 1;
+			}
 		}
-
 	}
 }
