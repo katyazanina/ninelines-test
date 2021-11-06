@@ -1,5 +1,5 @@
-# Стартовый шаблон для верстки
+# Тестовое задание
 
-## Документация
+## Екатерина @katyazanina
 
 Документация к данной сборке доступна по ссылке [https://github.com/ninelines-team/ninelines-docs](https://github.com/ninelines-team/ninelines-docs).
